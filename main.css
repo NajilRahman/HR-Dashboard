@@ -266,5 +266,12 @@ section .section-title {
 
 
 
+#tablecover{
+    display:none;
+}
 
-
+@media (min-width: 1200.98px) {
+   #tablecover{
+    display: block;
+   }
+}
