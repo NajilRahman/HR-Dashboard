@@ -7,6 +7,10 @@ body {
     padding-left: 240px;
     }
 }
+thead{
+    background-color: #000;
+    color: white;
+}
     h2{
         font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
@@ -269,9 +273,85 @@ section .section-title {
 #tablecover{
     display:none;
 }
-
-@media (min-width: 1200.98px) {
+#tables{
+    display: none;
+}
+@media (min-width: 990px) {
    #tablecover{
     display: block;
    }
+   #tables{
+    display: block;
+   }
+   .nav-pills{
+    display: none;
+   }
 }
+
+@media (max-width: 500px) {
+    span{
+        display:none;
+    }
+ }
+fa-solid
+
+/* From Uiverse.io by JohnnyCSilva */ 
+.ctmp {
+    width: 100%;
+    max-width: 500px;
+    height: 70px;
+    background: #fafafa;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease-in-out;
+  }
+  
+  .ctmp:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  
+  .img {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background: linear-gradient(#fcfcfc, #e1e90b);
+  }
+  
+  .ctmp:hover > .img {
+    transition: 0.5s ease-in-out;
+    background: linear-gradient(#ffffff, #ff0404);
+  }
+  
+  .textBox {
+    width: calc(100% - 90px);
+    margin-left: 10px;
+    color: rgb(0, 0, 0);
+    font-family: 'Poppins' sans-serif;
+  }
+  
+  .textContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .span {
+    font-size: 10px;
+  }
+  
+  .h1 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .p {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  

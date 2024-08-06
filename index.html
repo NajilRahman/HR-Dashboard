@@ -28,7 +28,7 @@
     <!--Main Navigation-->
     <header>
         <!-- Sidebar -->
-        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white" style="z-index: 1;">
+        <nav id="sidebarMenu" class="collapse d-lg-block d-xl-block  sidebar collapse bg-white">
             <div class="position-sticky">
                 <div class="text-center">
                     <span><i class="fa-brands fa-3x fa-connectdevelop mb-3" style="color: #000000;"></i>
@@ -41,14 +41,14 @@
                         class="list-group-item list-group-item-action py-3 ripple active" aria-current="true">
                         <i class="fa-solid fa-chart-simple me-4" style="color: #000000;"></i><span>Dashboard</span>
                     </a>
-                    <a href="#emp" id="employee" onclick="pageview(event)"
+                    <a href="#" id="employee" onclick="pageview(event)"
                         class="list-group-item list-group-item-action py-3 ripple "><i
                             class="fa-solid fa-user me-4"></i>
                         <span>Employee</span></a>
-                    <a href="#tables" id="tableview" onclick="pageview(event)"
+                    <a href="#" id="tableview" onclick="pageview(event)"
                         class="list-group-item list-group-item-action py-3 ripple">
                         <i class="fa-solid fa-table me-4" style="color: #000000;"></i><span>Table view</span></a>
-                    <a href="#note" id="notes" onclick="pageview(event)"
+                    <a href="#" id="notes" onclick="pageview(event)"
                         class="list-group-item list-group-item-action py-3 ripple">
                         <i class="fa-solid fa-pencil me-4" style="color: #000000;"></i>
                         <span>Notes</span></a>
@@ -63,8 +63,23 @@
     <!--Main Navigation-->
 
     <!--Main layout-->
-    <main
-        style="background-repeat: no-repeat; background-position: fixed; background-size: cover; background-image: url();">
+    <main>
+        <nav class="nav nav-pills nav-justified row">
+            <a href="#" class="nav-item nav-link active col-3">
+                <i class="fa-solid fa-chart-simple  me-4" style="color: #000000;"></i><span>Dashboard</span>
+            </a>
+            <a href="#empdiv"  class="nav-item nav-link  col-3  "><i
+                    class="fa-solid fa-user me-4 "></i>
+                <span>Employee</span></a>
+            <a href="#"  class="nav-item nav-link col-3 ">
+                <i class="fa-solid fa-table me-4 " style="color: #000000;"></i><span>Table view</span></a>
+            <a href="#notediv"  class="nav-item nav-link col-3 ">
+                <i class="fa-solid fa-pencil me-4" style="color: #000000;"></i>
+                <span>Notes</span></a>
+        </nav>
+
+
+
         <div class="container pt-4">
             <div id="salofdept" class="salofdept">
                 <h2 class="my-2 mb-4 mx-4">Salary per Department &nbsp&nbsp<i class="fa-solid fa-arrow-right"
@@ -203,11 +218,13 @@
 
 
         <!--employee details-->
-        <h2 id="emp" class="my-5 mb-5 mx-5">EMPLOYEE DETAILS &nbsp&nbsp<i class="fa-solid fa-arrow-right"
-                style="color: #c5c5c5;"></i></h2>
+        <div id="empdiv">
+            <h2 id="emp" class="my-5 mb-5 mx-5">EMPLOYEE DETAILS &nbsp&nbsp<i class="fa-solid fa-arrow-right"
+                    style="color: #c5c5c5;"></i></h2>
 
-        <div class="row px-5 py-1" id="employeedetails" style="overflow-x: hidden;">
+            <div class="row px-5 py-1" id="employeedetails" style="overflow-x: hidden;">
 
+            </div>
         </div>
 
 
@@ -216,60 +233,60 @@
 
         <!--Table view-->
 
-        <h2 id="tables" class="my-5 mb-5 mx-5 " style="display:none;">EMPLOYEE DETAILS TABLE VIEW &nbsp&nbsp<i class="fa-solid fa-arrow-right"
-            style="color: #c5c5c5;"></i></h2>
+        <div id="tablediv" style="overflow-x:hidden ;">
+            <h2 id="tables" class="my-5 mb-5 mx-5 ">EMPLOYEE DETAILS TABLE VIEW &nbsp&nbsp<i
+                    class="fa-solid fa-arrow-right" style="color: #c5c5c5;"></i></h2>
 
 
 
 
-        <div class="p-5" id="tablecover" > 
-            <table class="table align-middle mb-0 bg-white border-1 rounded">
-                <thead class="bg-light">
-                    <tr>
-                        <th>Name</th>
-                        <th>Title</th>
-                        <th>Status</th>
-                        <th>Salary</th>
-                        <th>Contract</th>
-                        <th>Joining Date</th>
-                        <th>Contact</th>
-                        <th>Team Leader</th>
-                        <th>Work Location</th>
-                        <th>Rating</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody id="tabledatas">
-                  
-                </tbody>
-            </table>
-        </div>
+            <div class="p-5" id="tablecover">
+                <table class="table align-middle mb-0 bg-white border-1 rounded">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Salary</th>
+                            <th>Contract</th>
+                            <th>Joining Date</th>
+                            <th>Contact</th>
+                            <th>Team Leader</th>
+                            <th>Work Location</th>
+                            <th>Rating</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabledatas">
 
-
-    <!--Notes-->
-   <div class="my-5 ">
-        <h2 id="note" class="my-5 mb-5 mx-5">Notes and Remarks<i class="fa-solid fa-arrow-right"
-            style="color: #c5c5c5;"></i></h2>
-    
-    
-        <div class="d-flex justify-content-center">
-            <div class="input-group w-50">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Add Notes"
-                  aria-label="Example input"
-                  aria-describedby="button-addon1"
-                />
-                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-warning" type="button" id="button-addon1" data-mdb-ripple-color="dark">
-                    ADD NOW
-                </button>
+                    </tbody>
+                </table>
             </div>
         </div>
-   </div>
 
-   
-    
+
+        <!--Notes-->
+        <div class="my-5 " id="notediv">
+            <h2 id="note" class="my-5 mb-5 mx-5">Notes and Remarks<i class="fa-solid fa-arrow-right"
+                    style="color: #c5c5c5;"></i></h2>
+
+            <div class="d-flex justify-content-center">
+                <div class="input-group w-50">
+                    <input id="message" type="text" class="form-control" placeholder="Add Notes"
+                        aria-label="Example input" aria-describedby="button-addon1" />
+                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-warning" type="button" id="addbtn"
+                        data-mdb-ripple-color="dark" onClick="addmessage()">
+                        ADD NOW
+                    </button>
+                </div>
+            </div>
+
+            <div class="container" id="notemsg"></div>
+
+
+        </div>
+
+
 
     </main>
     <!--Main layout-->

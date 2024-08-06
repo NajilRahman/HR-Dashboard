@@ -128,12 +128,79 @@ fetch('./data.json')
         })
     })
 
+
+    //side bar button function onlick
+
 pageview = (event) => {
     const id = event.target.getAttribute('id');
     console.log(id)
-    id == 'dash' ? (document.getElementById(id).setAttribute('class', `${document.getElementById(id).getAttribute('class')} active`), employee.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'), tableview.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'), notes.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple')) :
-        id == 'employee' ? (document.getElementById(id).setAttribute('class', `${document.getElementById(id).getAttribute('class')} active`), dash.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'), tableview.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'), notes.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple')) :
-        id == 'tableview' ? (document.getElementById(id).setAttribute('class', `${document.getElementById(id).getAttribute('class')} active`), dash.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'), employee.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'), notes.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple')) :
-        (document.getElementById(id).setAttribute('class', `${document.getElementById(id).getAttribute('class')} active`), dash.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'), employee.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'), tableview.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'))
-    console.log(document.getElementById(id))
+    id === 'dash' ? (
+        (document.getElementById(id).setAttribute('class', `${document.getElementById(id).getAttribute('class')} active`),
+        employee.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'),
+        tableview.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'),
+        notes.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'),
+        document.getElementById('empdiv').style.display = "block",
+        document.getElementById('tablediv').style.display = 'block',
+        document.getElementById('notediv').style.display = "block",
+        document.getElementById('salofdept').style.display = "block")
+    ) : id === 'employee' ? (
+        (document.getElementById(id).setAttribute('class', `${document.getElementById(id).getAttribute('class')} active`),
+        dash.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'),
+        tableview.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'),
+        notes.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'),
+        document.getElementById('empdiv').style.display = "block",
+        document.getElementById('tablediv').style.display = "none",
+        document.getElementById('notediv').style.display = "none",
+        document.getElementById('salofdept').style.display = "none")
+    ) : id === 'tableview' ? (
+        (document.getElementById(id).setAttribute('class', `${document.getElementById(id).getAttribute('class')} active`),
+        dash.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'),
+        employee.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'),
+        notes.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'),
+        document.getElementById('empdiv').style.display = "none",
+        document.getElementById('tablediv').style.display = "block",
+        document.getElementById('notediv').style.display = "none",
+        document.getElementById('salofdept').style.display = "none")
+    ) : (
+        (document.getElementById(id).setAttribute('class', `${document.getElementById(id).getAttribute('class')} active`),
+        dash.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'),
+        employee.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'),
+        tableview.setAttribute('class', 'list-group-item list-group-item-action py-3 ripple'),
+        document.getElementById('empdiv').style.display = "none",
+        document.getElementById('tablediv').style.display = "none",
+        document.getElementById('notediv').style.display = "block",
+        document.getElementById('salofdept').style.display = "none")
+    );
+    'notediv'.style.visibility='hidden'
 }
+i=1;
+msgcollection=[]
+function addmessage(){
+    msgobj=``;
+
+var date = new Date();
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+msg=message.value
+msgcollection.push({message:msg,id:'s'+i,date:day+'/'+month+'/'+year})
+i++;
+
+msgcollection.map(obj=>{
+    msgobj+=`<div id=${obj.id} class="d-flex justify-content-center align-items-center min-vh-50 my-4" onclick="removemsg(${obj.id})">
+                <div class="card ctmp">
+                    <div class="img"></div>
+                    <div class="textBox">
+                        <div class="textContent">
+                            <p class="h1">To Do List</p>
+                            <span class="span">${obj.date}</span>
+                        </div>
+                        <p class="p">${obj.message}</p>
+                    </div>
+                </div>
+        </div>`
+})
+notemsg.innerHTML=msgobj;
+}
+
+
