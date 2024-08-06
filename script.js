@@ -43,8 +43,7 @@ fetch('./data.json')
                     <div class="backside">
                         <div class="card">
                             <div class="card-body text-center mt-4 px-5" style="min-width:270px">
-                                <h4 class="card-title">Sunlimetech</h4>
-                                <p class="card-text">Name :${obj.firstName+' '+ obj.lastName}</p>
+                                <h4 class="card-title">${obj.firstName+' '+ obj.lastName}</h4>
                                 <p class="card-text">Depatment:${obj.department}</p>
                                 <p class="card-text">Age:${obj.age}</p>
                                 <p class="card-text">DOB :${obj.dob}</p>
