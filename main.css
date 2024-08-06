@@ -288,7 +288,11 @@ section .section-title {
    }
 }
 
-
+@media (max-width: 500px) {
+    .me-3{
+        display:none;
+    }
+ }
 
 .ctmp {
     width: 100%;
